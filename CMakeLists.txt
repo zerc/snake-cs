@@ -8,6 +8,8 @@ project(
 
 set(CMAKE_C_STANDARD 17)
 
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+
 add_subdirectory(vendor/check)
 
 add_subdirectory(src)
