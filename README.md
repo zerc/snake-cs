@@ -2,7 +2,7 @@
 
 ## Materials
 
-* [Moden Cmake](https://cliutils.gitlab.io/modern-cmake/)
+* [Modern Cmake](https://cliutils.gitlab.io/modern-cmake/)
 
 ## Development
 
