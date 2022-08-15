@@ -4,3 +4,4 @@ add_executable(snake_cs_check
 )
 
 target_link_libraries(snake_cs_check check snake_lib)
+add_test(NAME snake_check COMMAND snake_cs_check)

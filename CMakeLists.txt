@@ -13,6 +13,6 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 add_subdirectory(vendor/check)
 
 add_subdirectory(src)
-add_subdirectory(tests)
 
 enable_testing()
+add_subdirectory(tests)
