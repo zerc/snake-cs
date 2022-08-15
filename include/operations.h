@@ -24,5 +24,6 @@ struct Segment
 
 Segment *create_segment(Vector start, Vector direction, int magnitude);
 int free_segment(Segment *seg);
+int move_segment(Segment *segment, int distance, Vector *boundary);
 
 #endif // SNAKE_CS_OPERATIONS_H

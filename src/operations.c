@@ -40,3 +40,25 @@ int free_segment(Segment *seg)
     }
     return 0;
 }
+
+int move_segment(Segment *seg, int distance, Vector *boundary)
+{
+    Vector start = {
+        .x = seg->start.x + (seg->direction.x * distance),
+        .y = seg->start.y + (seg->direction.y * distance),
+    };
+
+    if (start.x < 0 || start.y < 0)
+    {
+        return -1;
+    }
+    if (start.x > boundary->x || start.y > boundary->y)
+    {
+        return -1;
+    }
+
+    seg->start.x = start.x;
+    seg->start.y = start.y;
+
+    return 0;
+}
