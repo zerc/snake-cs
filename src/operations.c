@@ -17,6 +17,12 @@ bool vectors_eq(Vector *a, Vector *b)
 
 Segment *create_segment(Vector start, Vector direction, int magnitude)
 {
+    // Validate the direction vector: it should be (-1, 0), (1, 0), (0, -1), (0, 1)
+    if (abs(direction.x) + abs(direction.y) != 1)
+    {
+        return NULL;
+    };
+
     Segment *seg = malloc(sizeof(Segment));
 
     if (seg == NULL)

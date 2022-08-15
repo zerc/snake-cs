@@ -54,6 +54,25 @@ START_TEST(test_create_segment)
 }
 END_TEST
 
+START_TEST(test_create_segment__invalid_direction)
+{
+    Segment *seg;
+    Vector start = create_vector(0, 0);
+
+    seg = create_segment(start, create_vector(0, 0), 1);
+    ck_assert_ptr_null(seg);
+
+    seg = create_segment(start, create_vector(1, 1), 1);
+    ck_assert_ptr_null(seg);
+
+    seg = create_segment(start, create_vector(-1, -1), 1);
+    ck_assert_ptr_null(seg);
+
+    seg = create_segment(start, create_vector(-1, 10), 1);
+    ck_assert_ptr_null(seg);
+}
+END_TEST
+
 START_TEST(test_move_segment)
 {
     Segment *seg;
@@ -88,6 +107,8 @@ TCase *create_operations_tcase(void)
     tcase_add_test(tcase, test_create_vector);
     tcase_add_test(tcase, test_vectors_eq);
     tcase_add_test(tcase, test_create_segment);
+    tcase_add_test(tcase, test_create_segment__invalid_direction);
     tcase_add_test(tcase, test_move_segment);
+
     return tcase;
 }
