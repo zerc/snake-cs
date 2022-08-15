@@ -10,6 +10,11 @@ Vector create_vector(int x, int y)
     return v;
 }
 
+bool vectors_eq(Vector *a, Vector *b)
+{
+    return a->x == b->x && a->y == b->y;
+}
+
 Segment *create_segment(Vector start, Vector direction, int magnitude)
 {
     Segment *seg = malloc(sizeof(Segment));

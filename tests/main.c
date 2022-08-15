@@ -1,13 +1,13 @@
 #include <check.h>
 #include <stdlib.h>
 
-TCase* create_operations_tcase(void);
+TCase *create_operations_tcase(void);
 
 Suite *suite(void)
 {
     Suite *s;
 
-    s = suite_create("Snake CS");
+    s = suite_create("snake cs");
 
     suite_add_tcase(s, create_operations_tcase());
 

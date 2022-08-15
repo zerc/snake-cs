@@ -1,3 +1,5 @@
+#include <stdbool.h>
+
 #ifndef SNAKE_CS_OPERATIONS_H
 #define SNAKE_CS_OPERATIONS_H
 
@@ -9,6 +11,7 @@ struct Vector
 };
 
 Vector create_vector(int x, int y);
+bool vectors_eq(Vector *a, Vector *b);
 
 typedef struct Segment Segment;
 struct Segment
