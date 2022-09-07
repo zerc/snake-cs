@@ -2,6 +2,7 @@
 #include <stdlib.h>
 
 TCase *create_operations_tcase(void);
+TCase *create_player_tcase(void);
 
 Suite *suite(void)
 {
@@ -10,6 +11,7 @@ Suite *suite(void)
     s = suite_create("snake cs");
 
     suite_add_tcase(s, create_operations_tcase());
+    suite_add_tcase(s, create_player_tcase());
 
     return s;
 }

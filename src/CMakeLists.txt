@@ -1,5 +1,6 @@
 set(SOURCES 
   operations.c
+  player.c
 )
 
 add_library(snake_lib ${SOURCES})
