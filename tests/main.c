@@ -3,6 +3,7 @@
 
 TCase *create_operations_tcase(void);
 TCase *create_player_tcase(void);
+TCase *create_level_tcase(void);
 
 Suite *suite(void)
 {
@@ -12,6 +13,7 @@ Suite *suite(void)
 
     suite_add_tcase(s, create_operations_tcase());
     suite_add_tcase(s, create_player_tcase());
+    suite_add_tcase(s, create_level_tcase());
 
     return s;
 }
