@@ -2,6 +2,16 @@
 
 #include "level.h"
 
+START_TEST(test_init_player)
+{
+    Player p = init_player("Player One");
+
+    ck_assert_str_eq(p.name, "Player One");
+    ck_assert_int_eq(p.score, 0);
+    ck_assert_ptr_null(p.seg);
+}
+END_TEST
+
 START_TEST(test_init_level)
 {
     Level l = init_level(3, 4, 0);
@@ -46,6 +56,7 @@ TCase *create_level_tcase(void)
     TCase *tcase;
     tcase = tcase_create("level");
 
+    tcase_add_test(tcase, test_init_player);
     tcase_add_test(tcase, test_init_level);
     tcase_add_test(tcase, test_add_player);
 

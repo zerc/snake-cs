@@ -1,8 +1,16 @@
 #include "operations.h"
-#include "player.h"
 
 #ifndef SNAKE_CS_LEVEL_H
 #define SNAKE_CS_LEVEL_H
+
+typedef struct Player Player;
+struct Player
+{
+    char *name;
+    int score;
+    Segment *seg;
+};
+Player init_player(char *name);
 
 typedef struct Level Level;
 struct Level

@@ -1,7 +1,6 @@
 add_executable(snake_cs_check
   main.c
   check_operations.c
-  check_player.c
   check_level.c
 )
 

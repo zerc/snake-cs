@@ -1,6 +1,5 @@
 set(SOURCES 
   operations.c
-  player.c
   level.c
 )
 

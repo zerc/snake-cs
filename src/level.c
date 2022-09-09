@@ -2,6 +2,15 @@
 #include <string.h>
 #include "level.h"
 
+Player init_player(char *name)
+{
+    Player p = {
+        .name = name,
+        .score = 0,
+    };
+    return p;
+};
+
 Level init_level(int x, int y, int stage)
 {
     Level l = {
