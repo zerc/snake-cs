@@ -27,17 +27,14 @@ END_TEST
 START_TEST(test_add_player)
 {
     Level l = init_level(3, 4, 0);
-    Player p1 = init_player("Player One");
-    Player p2 = init_player("Player Two");
-    Player p3 = init_player("Player Three");
 
-    int p1_id = add_player(&l, &p1);
+    int p1_id = add_player(&l, "Player One");
     ck_assert_int_eq(l.players_count, 1);
 
-    int p2_id = add_player(&l, &p2);
+    int p2_id = add_player(&l, "Player Two");
     ck_assert_int_eq(l.players_count, 2);
 
-    int p3_id = add_player(&l, &p3);
+    int p3_id = add_player(&l, "Player Three");
     ck_assert_int_eq(l.players_count, 3);
 
     ck_assert_int_eq(p1_id, 0);

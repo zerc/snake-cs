@@ -2,12 +2,12 @@
 #include <string.h>
 #include "level.h"
 
-Player init_player(char *name)
+Player init_player(char name[PLAYER_NAME_LENGTH])
 {
     Player p = {
-        .name = name,
         .score = 0,
     };
+    memcpy(p.name, name, PLAYER_NAME_LENGTH);
     return p;
 };
 
@@ -23,7 +23,7 @@ Level init_level(int x, int y, int stage)
     return l;
 };
 
-int add_player(Level *level, Player *player)
+int add_player(Level *level, char name[PLAYER_NAME_LENGTH])
 {
     if (level->players == NULL)
     {
@@ -32,7 +32,8 @@ int add_player(Level *level, Player *player)
         {
             return -1;
         }
-        memcpy(level->players, player, sizeof(Player));
+        Player player = init_player(name);
+        memcpy(level->players, &player, sizeof(Player));
     }
     else
     {
@@ -57,7 +58,8 @@ int add_player(Level *level, Player *player)
             }
             else
             {
-                memcpy(dst + offset, player, sizeof(Player));
+                Player player = init_player(name);
+                memcpy(dst + offset, &player, sizeof(Player));
             }
         }
         free(level->players);
