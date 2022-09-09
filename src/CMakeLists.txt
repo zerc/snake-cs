@@ -1,5 +1,6 @@
 set(SOURCES 
   operations.c
+  matrix.c
   level.c
 )
 
