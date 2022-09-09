@@ -42,6 +42,10 @@ int free_segment(Segment *seg)
 {
     if (seg != NULL)
     {
+        if (seg->next != NULL)
+        {
+            free_segment(seg->next);
+        }
         free(seg);
     }
     return 0;

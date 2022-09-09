@@ -10,9 +10,11 @@ struct Player
 {
     char name[PLAYER_NAME_LENGTH];
     int score;
+    bool active;
     Segment *seg;
 };
 Player init_player(char name[PLAYER_NAME_LENGTH]);
+void free_player(Player *player);
 
 typedef struct Level Level;
 struct Level
@@ -24,7 +26,9 @@ struct Level
     Player *players;
 };
 
-Level init_level(int x, int y, int stage);
+Level *init_level(int x, int y, int stage);
+void free_level(Level *level);
 int add_player(Level *level, char name[PLAYER_NAME_LENGTH]);
 Player *get_player(Level *level, int player_id);
+int update_player_score(Level *level, int player_id, int score);
 #endif // SNAKE_CS_LEVEL_H
