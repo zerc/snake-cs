@@ -6,6 +6,8 @@ project(
     LANGUAGES C
 )
 
+find_package(Curses REQUIRED)
+
 set(CMAKE_C_STANDARD 17)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
