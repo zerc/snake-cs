@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "operations.h": "c",
+        "check.h": "c",
+        "curses.h": "c",
+        "typeinfo": "cpp",
+        "string.h": "c",
+        "stdlib.h": "c",
+        "stdbool.h": "c"
+    }
+}
