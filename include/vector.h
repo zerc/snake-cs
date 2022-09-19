@@ -1,7 +1,7 @@
 #include <stdbool.h>
 
-#ifndef SNAKE_CS_OPERATIONS_H
-#define SNAKE_CS_OPERATIONS_H
+#ifndef SNAKE_CS_VECTOR_H
+#define SNAKE_CS_VECTOR_H
 
 typedef struct Vector Vector;
 struct Vector
@@ -26,4 +26,4 @@ Segment *create_segment(Vector start, Vector direction, int magnitude);
 int free_segment(Segment *seg);
 int move_segment(Segment *segment, int distance, Vector *boundary);
 
-#endif // SNAKE_CS_OPERATIONS_H
+#endif // SNAKE_CS_VECTOR_H

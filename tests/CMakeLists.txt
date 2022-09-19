@@ -1,6 +1,6 @@
 add_executable(snake_cs_check
   main.c
-  check_operations.c
+  check_vector.c
   check_level.c
   check_matrix.c
 )

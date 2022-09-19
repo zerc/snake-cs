@@ -1,6 +1,6 @@
 #include <check.h>
 
-#include "operations.h"
+#include "vector.h"
 
 START_TEST(test_create_vector)
 {

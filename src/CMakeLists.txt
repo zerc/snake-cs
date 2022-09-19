@@ -1,5 +1,5 @@
 set(SOURCES 
-  operations.c
+  vector.c
   matrix.c
   level.c
 )

@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "operations.h"
+#include "vector.h"
 
 Vector create_vector(int x, int y)
 {
