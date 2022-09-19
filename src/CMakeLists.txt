@@ -2,6 +2,7 @@ set(SOURCES
   vector.c
   matrix.c
   level.c
+  sn_options.c
 )
 
 add_library(snake_lib ${SOURCES})

@@ -1,14 +1,26 @@
 #include <curses.h>
-#include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc, char const *argv[])
+#include "sn_options.h"
+
+int main(int argc, char *argv[])
 {
-    initscr();                 /* Start curses mode 		  */
-    printw("Hello World !!!"); /* Print Hello World		  */
-    refresh();                 /* Print it on to the real screen */
-    getch();                   /* Wait for user input */
-    endwin();                  /* End curses mode		  */
+    int error = 0;
+    SN_Options options = sn_parse_options(argc, argv, &error);
+
+    if (error != 0)
+    {
+        print_error("Could not parse CLI parameters.");
+        return EXIT_FAILURE;
+    }
+
+    puts("Options\n");
+    printf("show_version=%d\n", options.show_version);
+    printf("show_help=%d\n", options.show_help);
+    printf("gui=%d\n", options.gui);
+    printf("name=%s\n", options.name);
+    printf("connect=%s\n", options.connect);
+    puts("\ndone\n");
 
     return EXIT_SUCCESS;
 }
