@@ -29,11 +29,18 @@ Level *init_level(int x, int y, int stage)
         return NULL;
     }
 
+    Matrix *m = create_matrix(y, x);
+    if (m == NULL)
+    {
+        return NULL;
+    }
+
     l->top_x = x;
     l->top_y = y;
     l->stage = stage;
     l->players_count = 0;
     l->players = NULL;
+    l->area = m;
 
     return l;
 };
@@ -95,7 +102,15 @@ void free_level(Level *level)
             free_player(p);
         }
         free(level->players);
+        level->players = NULL;
     }
+
+    if (level->area != NULL)
+    {
+        free_matrix(level->area);
+        level->area = NULL;
+    }
+
     free(level);
 }
 

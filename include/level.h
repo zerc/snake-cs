@@ -1,4 +1,5 @@
 #include "vector.h"
+#include "matrix.h"
 
 #ifndef SNAKE_CS_LEVEL_H
 #define SNAKE_CS_LEVEL_H
@@ -24,6 +25,7 @@ struct Level
     int top_y;
     int players_count;
     Player *players;
+    Matrix *area;
 };
 
 Level *init_level(int x, int y, int stage);

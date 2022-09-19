@@ -22,6 +22,10 @@ START_TEST(test_init_level)
     ck_assert_int_eq(l->players_count, 0);
     ck_assert_ptr_null(l->players);
 
+    ck_assert_ptr_nonnull(l->area);
+    ck_assert_int_eq(l->area->cols, l->top_x);
+    ck_assert_int_eq(l->area->rows, l->top_y);
+
     free_level(l);
 }
 END_TEST
