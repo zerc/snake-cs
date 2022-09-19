@@ -4,6 +4,7 @@
 TCase *create_operations_tcase(void);
 TCase *create_level_tcase(void);
 TCase *create_matrix_tcase(void);
+TCase *create_sn_options_tcase(void);
 
 Suite *suite(void)
 {
@@ -14,6 +15,7 @@ Suite *suite(void)
     suite_add_tcase(s, create_operations_tcase());
     suite_add_tcase(s, create_level_tcase());
     suite_add_tcase(s, create_matrix_tcase());
+    suite_add_tcase(s, create_sn_options_tcase());
 
     return s;
 }

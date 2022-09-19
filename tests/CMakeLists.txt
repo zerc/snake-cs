@@ -3,6 +3,7 @@ add_executable(snake_cs_check
   check_vector.c
   check_level.c
   check_matrix.c
+  check_options.c
 )
 
 target_link_libraries(snake_cs_check check snake_lib)

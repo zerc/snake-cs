@@ -103,7 +103,7 @@ int sn_parse_short_option(SN_Options *opts, int c)
     return 0;
 };
 
-SN_Options sn_parse_options(int argc, char *argv[], int *error)
+SN_Options sn_parse_options(int argc, char *argv[])
 {
     SN_Options parsed_options = {
         .show_version = 0,

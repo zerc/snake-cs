@@ -20,13 +20,10 @@ struct SN_Options
     char connect[20]; // TODO: parse it into a struct
 };
 
-SN_Options sn_parse_options(int argc, char *argv[], int *error);
+SN_Options sn_parse_options(int argc, char *argv[]);
 int sn_parse_long_option(SN_Options *opts, int index);
 int sn_parse_short_option(SN_Options *opts, int c);
-void print_help();
-void print_version();
 void sn_set_str_value(char *dest, char *src, int len);
-
 void print_error(char *msg);
 
 #endif // SNAKE_CS_OPTIONS_H
